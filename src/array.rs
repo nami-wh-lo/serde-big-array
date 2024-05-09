@@ -14,11 +14,12 @@ use serde::{Deserialize, Deserializer, Serialize, Serializer};
 ///
 /// [`BigArray`]: crate::BigArray
 ///
-/// ```Rust
+/// ```rust
 /// # use serde_derive::{Serialize, Deserialize};
 /// #[derive(Serialize, Deserialize)]
 /// struct S {
-///     arr: Box<Array<u8, 64>>,
+///     arr_boxed: Box<Array<u8, 64>>,
+///     arr_nested: Array<Array<u8, 234>, 65>,
 /// }
 /// ```
 #[repr(transparent)]
